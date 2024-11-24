@@ -121,6 +121,7 @@ nav a:hover {
 }
 
 section {
+  clear: left;
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
@@ -179,8 +180,35 @@ footer {
   text-decoration: none;
   color: var(--accent-color);
   font-weight: bold;
+  overflow-wrap: anywhere;
 }
 
 .doi a:hover {
   text-decoration: underline;
+}
+
+#bio {
+}
+
+#bio img {
+  float: left;
+  margin-right: 1rem;
+  width: max(30vw, 200px);
+  max-width: 500px;
+}
+
+#bio section {
+  grid-column: 2 / 3;
+}
+
+@media screen and (max-width: 320px) {
+main {
+  margin: 3vh 5vw 10vh 5vw;
+}
+}
+
+@media screen and (max-width: 430px) {
+#bio img {
+  float: none;
+}
 }
