@@ -188,12 +188,14 @@ footer {
 }
 
 #bio {
+  display: grid;
+  max-width: 1100px;
 }
 
 #bio img {
   float: left;
   margin-right: 1rem;
-  width: max(30vw, 200px);
+  width: max(25vw, 200px);
   max-width: 500px;
 }
 
