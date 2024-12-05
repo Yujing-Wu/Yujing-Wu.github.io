@@ -91,7 +91,8 @@ body {
 }
 
 main {
-  margin: 5vh 15vw 10vh 15vw;
+  margin: 3vh auto 3rem auto;
+  width: 85%;
 }
 
 header {
@@ -205,12 +206,30 @@ footer {
 
 @media screen and (max-width: 320px) {
 main {
-  margin: 3vh 5vw 10vh 5vw;
+  width: 85%;
+
 }
 }
 
 @media screen and (max-width: 430px) {
 #bio img {
   float: none;
+}
+
+main {
+  width: 85%;
+
+}
+}
+
+@media screen and (min-width: 800px) {
+main {
+  width: 90%;
+}
+}
+
+@media screen and (min-width: 1200px) {
+main {
+  width: 900px;
 }
 }
