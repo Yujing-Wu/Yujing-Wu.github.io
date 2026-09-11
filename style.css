@@ -31,6 +31,7 @@ dd {
 
 /* Set core body defaults */
 body {
+  font-family: 'Inter', sans-serif;
   min-height: 100vh;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
@@ -41,6 +42,15 @@ body {
 ul[class],
 ol[class] {
   list-style: none;
+}
+
+a {
+  color: #207a78;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 /* A elements that don't have a class get default styles */
@@ -93,6 +103,7 @@ body {
 main {
   margin: 3vh auto 3rem auto;
   width: 85%;
+  padding-bottom: 4rem;
 }
 
 header {
@@ -144,48 +155,63 @@ footer {
 }
 
 .publication-list li {
-  background: white;
-  border: 1px solid var(--primary-color);
-  border-radius: 8px;
-  padding: 1rem;
+  margin-top: 0.75rem;
   margin-bottom: 1.5rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding-left: 2rem;
+  text-indent: -2rem;
+  line-height: 1.6;
 }
 
-.publication-list li h2 {
-  margin: 0;
-  font-size: 1.2rem;
-  color: var(--secondary-color);
-}
-
-.publication-list li p {
-  margin: 0.5rem 0;
-  line-height: 1.5;
-}
-
-.authors {
-  font-style: italic;
-  color: var(--text-color);
-}
-
-.journal {
-  font-weight: bold;
-  color: var(--primary-color);
-}
-
-.doi {
-  margin-top: 0.5rem;
-}
-
-.doi a {
-  text-decoration: none;
-  color: var(--accent-color);
-  font-weight: bold;
+.publication-list a {
+  color: inherit;
+  text-decoration: underline;
+  font-weight: normal;
   overflow-wrap: anywhere;
 }
 
-.doi a:hover {
-  text-decoration: underline;
+.research-topics {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.research-intro {
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+.research-topic {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  gap: 2rem;
+  margin: 0;
+  padding: 2rem;
+  border-left: 4px solid var(--primary-color);
+  background-color: #eef5f3;
+}
+
+.research-topic h3 {
+  color: var(--secondary-color);
+  font-size: 1.25rem;
+  line-height: 1.4;
+}
+
+.research-topic-content {
+  min-width: 0;
+  line-height: 1.7;
+}
+
+.research-topic-content a {
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+  .research-topic {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1.25rem;
+  }
 }
 
 #bio {
@@ -193,11 +219,33 @@ footer {
   max-width: 1100px;
 }
 
-#bio img {
-  float: left;
-  margin-right: 1rem;
-  width: max(25vw, 200px);
-  max-width: 500px;
+#intro {
+  display: grid;
+  grid-template-columns: minmax(200px, 30%) minmax(0, 1fr);
+  align-items: start;
+  column-gap: 2rem;
+  row-gap: 0;
+}
+
+#intro > h1 {
+  grid-column: 1 / -1;
+}
+
+#intro img {
+  width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 600px) {
+  #intro {
+    grid-template-columns: 1fr;
+    row-gap: 1rem;
+  }
+
+  #intro img {
+    max-width: 250px;
+    justify-self: center;
+  }
 }
 
 #bio section {
@@ -212,10 +260,6 @@ main {
 }
 
 @media screen and (max-width: 430px) {
-#bio img {
-  float: none;
-}
-
 main {
   width: 85%;
 
